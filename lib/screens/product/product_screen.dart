@@ -2,28 +2,29 @@ import 'package:flutter/material.dart';
 import '../../widgets/bottom_app_bar.dart';
 import '../../widgets/custom_app_bar.dart';
 
-class CartScreen extends StatefulWidget {
-  const CartScreen({
+class ProductScreen extends StatefulWidget {
+  const ProductScreen({
     Key? key,
+    required this.product,
   }) : super(key: key);
 
-  static const routeName = '/cart';
+  static const routeName = '/product';
 
   static Route route() {
     return MaterialPageRoute(
         settings: const RouteSettings(name: routeName),
-        builder: (_) => const CartScreen());
+        builder: (_) => const ProductScreen(product: product,));
   }
 
   @override
-  State<CartScreen> createState() => _CartScreenState();
+  State<ProductScreen> createState() => _ProductScreenState();
 }
 
-class _CartScreenState extends State<CartScreen> {
+class _ProductScreenState extends State<ProductScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      appBar: CustomAppBar(title: 'Cart'),
+      appBar: CustomAppBar(title: 'Products'),
       bottomNavigationBar: CustomBottomAppBar(),
     );
   }
